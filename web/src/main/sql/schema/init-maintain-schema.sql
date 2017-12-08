@@ -1,11 +1,8 @@
-#如果复制到mysql中执行时 加上
-#DELIMITER ;;
-
-drop table if exists `maintain_icon`;;
-drop table if exists `maintain_map`;;
-drop table if exists `maintain_notification_template`;;
-drop table if exists `maintain_notification_data`;;
-drop table if exists `maintain_task_definition`;;
+drop table if exists `maintain_icon`;
+drop table if exists `maintain_map`;
+drop table if exists `maintain_notification_template`;
+drop table if exists `maintain_notification_data`;
+drop table if exists `maintain_task_definition`;
 
 create table `maintain_icon`(
   `id`         bigint not null auto_increment,
@@ -22,8 +19,8 @@ create table `maintain_icon`(
   `description`  varchar(100),
   constraint `pk_maintain_icon` primary key(`id`),
   constraint `unique_maintain_icon_identity` unique(`identity`)
-) charset=utf8 ENGINE=InnoDB;;
-alter table `maintain_icon` auto_increment=2000;;
+) charset=utf8 ENGINE=InnoDB;
+alter table `maintain_icon` auto_increment=2000;
 
 
 create table `maintain_map`(
@@ -32,8 +29,8 @@ create table `maintain_map`(
   `map_value`  varchar(500),
   constraint `pk_maintain_map` primary key(`id`),
   constraint `unique_maintain_map_key` unique(`map_key`)
-) charset=utf8 ENGINE=InnoDB;;
-alter table `maintain_map` auto_increment=2000;;
+) charset=utf8 ENGINE=InnoDB;
+alter table `maintain_map` auto_increment=2000;
 
 create table `maintain_notification_template`(
   `id`               bigint not null auto_increment,
@@ -45,8 +42,8 @@ create table `maintain_notification_template`(
 
   constraint `pk_maintain_notification_template` primary key(`id`),
   constraint `unique_maintain_notification_template_name` unique(`name`)
-) charset=utf8 ENGINE=InnoDB;;
-alter table `maintain_notification_template` auto_increment=2000;;
+) charset=utf8 ENGINE=InnoDB;
+alter table `maintain_notification_template` auto_increment=2000;
 
 create table `maintain_notification_data`(
   `id`               bigint not null auto_increment,
@@ -59,7 +56,7 @@ create table `maintain_notification_data`(
 
   constraint `pk_maintain_notification_data` primary key(`id`),
   index `idx_maintain_notification_data_user_id_read` (`user_id`, `is_read`)
-) charset=utf8 ENGINE=InnoDB;;
+) charset=utf8 ENGINE=InnoDB;
 
 create table `maintain_task_definition`(
   `id`               bigint not null auto_increment,
@@ -72,5 +69,5 @@ create table `maintain_task_definition`(
   `description`     varchar(2000),
 
   constraint `pk_maintain_task_definition` primary key(`id`)
-) charset=utf8 ENGINE=InnoDB;;
+) charset=utf8 ENGINE=InnoDB;
 

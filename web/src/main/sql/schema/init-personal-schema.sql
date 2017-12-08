@@ -1,9 +1,7 @@
-#如果复制到mysql中执行时 加上
-#DELIMITER ;;
 
-drop table if exists `personal_message`;;
-drop table if exists `personal_message_content`;;
-drop table if exists `personal_calendar`;;
+drop table if exists `personal_message`;
+drop table if exists `personal_message_content`;
+drop table if exists `personal_calendar`;
 
 
 create table `personal_message`(
@@ -30,7 +28,7 @@ create table `personal_message`(
   index `idx_personal_parent_id` (`parent_id`),
   index `idx_personal_parent_ids` (`parent_ids`),
   index `idx_personal_message_type` (`type`)
-) charset=utf8 ENGINE=InnoDB;;
+) charset=utf8 ENGINE=InnoDB;
 
 create table `personal_message_content`(
   `id`               bigint not null auto_increment,
@@ -38,7 +36,7 @@ create table `personal_message_content`(
   `content`          longtext,
   constraint `pk_personal_message_content` primary key(`id`),
   index `idx_personal_message_content_message_id` (`message_id`)
-) charset=utf8 ENGINE=InnoDB;;
+) charset=utf8 ENGINE=InnoDB;
 
 create table `personal_calendar`(
   `id`         bigint not null auto_increment,
